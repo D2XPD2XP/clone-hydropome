@@ -3,12 +3,21 @@ import 'package:clone_hydropome/widgets/card_marketplace.dart';
 import 'package:clone_hydropome/widgets/card_progress.dart';
 import 'package:clone_hydropome/widgets/card_task.dart';
 import 'package:clone_hydropome/widgets/custom_button.dart';
+import 'package:clone_hydropome/widgets/custom_dialog.dart';
 import 'package:clone_hydropome/widgets/day_item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PantauTask extends StatelessWidget {
   const PantauTask({super.key});
+
+ void showCustomDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (ctx) => CustomDialog(),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +145,7 @@ class PantauTask extends StatelessWidget {
                   SizedBox(height: 38,),
                   CustomButton(isPrimary: false, text: 'Lihat Panduan',),
                   SizedBox(height: 12,),
-                  CustomButton(isPrimary: true, text: 'Hari ke-1 Selesai',)
+                  CustomButton(isPrimary: true, text: 'Hari ke-1 Selesai', onTap: showCustomDialog,)
                 ],
               ),
             ),
