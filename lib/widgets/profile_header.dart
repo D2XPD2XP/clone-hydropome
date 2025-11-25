@@ -1,3 +1,4 @@
+import 'package:clone_hydropome/screens/edit_profile_page.dart';
 import 'package:clone_hydropome/widgets/bottom_clipper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,9 +49,14 @@ class ProfileHeader extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 60),
+            Spacer(),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditProfilePage()),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 8),
                 width: 90,

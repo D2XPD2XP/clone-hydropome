@@ -22,7 +22,7 @@ class ListTanamanPage extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)],
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +66,7 @@ class ListTanamanPage extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)],
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

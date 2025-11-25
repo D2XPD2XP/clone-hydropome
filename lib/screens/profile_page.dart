@@ -1,3 +1,4 @@
+import 'package:clone_hydropome/screens/status_pesanan_page.dart';
 import 'package:clone_hydropome/widgets/profile_header.dart';
 import 'package:clone_hydropome/widgets/status_pesanan_item.dart';
 import 'package:flutter/material.dart';
@@ -15,47 +16,52 @@ class ProfilePage extends StatelessWidget {
           children: [
             ProfileHeader(),
             SizedBox(height: 56),
-            Container(
-              width: 365,
-              height: 140,
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Status Pesanan Marketplace',
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatusPesananPage(),));
+              } ,
+              child: Container(
+                width: 365,
+                height: 140,
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Status Pesanan Marketplace',
+                      style: GoogleFonts.plusJakartaSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      StatusPesananItem(
-                        image: 'assets/3d-square.png',
-                        label: 'Diproses',
-                      ),
-                      SizedBox(width: 49),
-                      StatusPesananItem(
-                        image: 'assets/truck-fast.png',
-                        label: 'Diproses',
-                      ),
-                      SizedBox(width: 49),
-                      StatusPesananItem(
-                        image: 'assets/medal-star.png',
-                        label: 'Diproses',
-                      ),
-                    ],
-                  ),
-                ],
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        StatusPesananItem(
+                          image: 'assets/3d-square.png',
+                          label: 'Diproses',
+                        ),
+                        SizedBox(width: 49),
+                        StatusPesananItem(
+                          image: 'assets/truck-fast.png',
+                          label: 'Dikirim',
+                        ),
+                        SizedBox(width: 49),
+                        StatusPesananItem(
+                          image: 'assets/medal-star.png',
+                          label: 'Selesai',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -67,7 +73,7 @@ class ProfilePage extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)],
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
               ),
               child: Row(
                 children: [
@@ -102,7 +108,7 @@ class ProfilePage extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)],
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
               ),
               child: Row(
                 children: [
