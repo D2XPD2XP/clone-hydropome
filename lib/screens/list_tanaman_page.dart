@@ -102,6 +102,7 @@ class ListTanamanPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 10,)
           ],
         ),
       ),

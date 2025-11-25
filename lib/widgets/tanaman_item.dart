@@ -89,9 +89,9 @@ class TanamanItem extends StatelessWidget {
             );
           },
           child: Container(
+            padding: EdgeInsets.symmetric(vertical: 8),
             width: 64,
             height: 36,
-            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 10),
             decoration: BoxDecoration(
               color: Color(0xFF179778),
               borderRadius: BorderRadius.circular(12),
@@ -103,6 +103,7 @@ class TanamanItem extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 12,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
         ),
