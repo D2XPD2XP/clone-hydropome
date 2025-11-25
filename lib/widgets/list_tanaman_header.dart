@@ -32,10 +32,10 @@ class ListTanamanHeader extends StatelessWidget {
                 ),
                 SizedBox(width: 13),
                 Padding(
-                  padding: const EdgeInsets.only(top: 65, right: 26.3),
+                  padding: const EdgeInsets.only(top: 75),
                   child: Image.asset(
                     'assets/pohonkeramat.png',
-                    height: 160,
+                    height: 150,
                     fit: BoxFit.contain,
                   ),
                 ),
