@@ -1,4 +1,5 @@
 import 'package:clone_hydropome/screens/list_tanaman_page.dart';
+import 'package:clone_hydropome/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
     Scaffold(backgroundColor: Colors.white),
     ListTanamanPage(),
     Scaffold(backgroundColor: Colors.white),
-    Scaffold(backgroundColor: Colors.white),
+    ProfilePage(),
   ];
 
   void onItemTapped(int index) {
