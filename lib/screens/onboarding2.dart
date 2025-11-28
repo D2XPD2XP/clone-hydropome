@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'onboarding2.dart';
 
-class Onboarding1 extends StatelessWidget {
-  const Onboarding1({super.key});
+class Onboarding2 extends StatelessWidget {
+  const Onboarding2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +9,10 @@ class Onboarding1 extends StatelessWidget {
       backgroundColor: const Color(0xFF093731),
       body: Column(
         children: [
-          // gambar arc
           ClipPath(
             clipper: _ArcClipper(),
             child: Image.asset(
-              'onboarding1',
+              'assets/onboarding2.png',
               width: double.infinity,
               height: 380,
               fit: BoxFit.cover,
@@ -23,13 +21,12 @@ class Onboarding1 extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          // TEKS
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: const [
                 Text(
-                  'Tanam Sayur Segar dari Rumah Tanpa Ribet! 🥕🍅',
+                  'Belanja Starter Kit & Jual Hasil Panen!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 26,
@@ -39,7 +36,7 @@ class Onboarding1 extends StatelessWidget {
                 ),
                 SizedBox(height: 12),
                 Text(
-                  'Bersama HydropoMe, menanam sayuran untuk hidup lebih sehat dan hemat jadi lebih mudah!',
+                  'Belanja, jual panen, dan penuhi kebutuhanmu di marketplace kami. Praktis banget buat kamu yang suka berkebun dari rumah!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -53,25 +50,14 @@ class Onboarding1 extends StatelessWidget {
 
           const Spacer(),
 
-          // INDICATOR + NEXT
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _Dot(active: true),
-              const SizedBox(width: 6),
+            children: const [
               _Dot(active: false),
-              const SizedBox(width: 50),
-
-              // BUTTON NEXT
-              GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Onboarding2()),
-                );
-              },
-              child: const Icon(Icons.arrow_forward, color: Colors.white, size: 36),
-            ),
+              SizedBox(width: 6),
+              _Dot(active: true),
+              SizedBox(width: 50),
+              Icon(Icons.arrow_forward, color: Colors.white, size: 36),
             ],
           ),
           const SizedBox(height: 60),
@@ -81,7 +67,6 @@ class Onboarding1 extends StatelessWidget {
   }
 }
 
-// DOT Indicator
 class _Dot extends StatelessWidget {
   final bool active;
   const _Dot({required this.active});
@@ -99,7 +84,6 @@ class _Dot extends StatelessWidget {
   }
 }
 
-// Custom curve clipper
 class _ArcClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
