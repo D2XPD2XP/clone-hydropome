@@ -14,7 +14,7 @@ class Onboarding1 extends StatelessWidget {
           ClipPath(
             clipper: _ArcClipper(),
             child: Image.asset(
-              'onboarding1',
+              'assets/onboarding1.png',
               width: double.infinity,
               height: 380,
               fit: BoxFit.cover,
