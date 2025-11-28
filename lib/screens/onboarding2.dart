@@ -19,7 +19,7 @@ class Onboarding2 extends StatelessWidget {
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height * 0.45,
                   child: Image.asset(
-                    'assets/onboarding2.png',
+                    'assets/onboarding2.png', // Pastikan file ini ada di folder assets
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -132,7 +132,7 @@ class _NextButton extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const LoginPage()),
+          MaterialPageRoute(builder: (context) => const LoginPage()), // Diperbaiki: LoginPage bukan Login
         );
       },
       child: const Icon(Icons.arrow_forward, color: Colors.white, size: 36),
