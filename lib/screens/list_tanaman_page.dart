@@ -41,14 +41,14 @@ class ListTanamanPage extends StatelessWidget {
                     difficultyText: 'Mudah',
                     day: 1,
                   ),
-                  Divider(height: 32, color: Color(0xFFEDEDED),),
+                  Divider(height: 32, color: Color(0xFFEDEDED)),
                   TanamanItem(
                     image: 'assets/bayam.png',
                     name: 'Bayam Hidroponik',
                     difficultyText: 'Mudah',
                     day: 5,
                   ),
-                  Divider(height: 32, color: Color(0xFFEDEDED),),
+                  Divider(height: 32, color: Color(0xFFEDEDED)),
                   TanamanItem(
                     image: 'assets/cabai.png',
                     name: 'Cabai Hidroponik',
@@ -58,7 +58,7 @@ class ListTanamanPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 26,),
+            SizedBox(height: 26),
             Container(
               width: 386,
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -85,14 +85,14 @@ class ListTanamanPage extends StatelessWidget {
                     difficultyText: 'Mudah',
                     day: 1,
                   ),
-                  Divider(height: 32, color: Color(0xFFEDEDED),),
+                  Divider(height: 32, color: Color(0xFFEDEDED)),
                   TanamanItem(
                     image: 'assets/bayam.png',
                     name: 'Bayam Hidroponik',
                     difficultyText: 'Mudah',
                     day: 5,
                   ),
-                  Divider(height: 32, color: Color(0xFFEDEDED),),
+                  Divider(height: 32, color: Color(0xFFEDEDED)),
                   TanamanItem(
                     image: 'assets/cabai.png',
                     name: 'Cabai Hidroponik',
@@ -102,7 +102,7 @@ class ListTanamanPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10,)
+            SizedBox(height: 10),
           ],
         ),
       ),
