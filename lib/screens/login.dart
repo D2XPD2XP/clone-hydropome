@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'regist.dart'; // Pastikan file register.dart ada
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               
               // Welcome text
               const Text(
-                'Selamat Datang Kembali HydropoMate!',
+                'Selamat Datang Kembali HydropoMate🌿🍃!',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -158,8 +159,10 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    // Navigate to registration screen
-                    print('Navigate to registration');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const RegisterPage()),
+                    );
                   },
                   child: RichText(
                     text: TextSpan(
@@ -168,10 +171,10 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.grey[600],
                         fontSize: 14,
                       ),
-                      children: [
+                      children: const [
                         TextSpan(
                           text: 'Daftar',
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Color(0xFF093731),
                             fontWeight: FontWeight.bold,
                           ),
@@ -181,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-            ],
+            ], // Tambahkan kurung sini untuk menutup children Column
           ),
         ),
       ),

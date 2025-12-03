@@ -19,7 +19,7 @@ class Onboarding2 extends StatelessWidget {
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height * 0.45,
                   child: Image.asset(
-                    'assets/onboarding2.png', // Pastikan file ini ada di folder assets
+                    'assets/onboarding2.png', 
                     fit: BoxFit.cover,
                   ),
                 ),
