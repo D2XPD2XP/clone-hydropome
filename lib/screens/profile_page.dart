@@ -3,6 +3,7 @@ import 'package:clone_hydropome/widgets/profile_header.dart';
 import 'package:clone_hydropome/widgets/status_pesanan_item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:clone_hydropome/screens/personalisasi_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -18,8 +19,11 @@ class ProfilePage extends StatelessWidget {
             SizedBox(height: 56),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatusPesananPage(),));
-              } ,
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => StatusPesananPage()),
+                );
+              },
               child: Container(
                 width: 365,
                 height: 140,
@@ -75,28 +79,36 @@ class ProfilePage extends StatelessWidget {
                 color: Colors.white,
                 boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
               ),
-              child: Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFE8F5F2),
-                      shape: BoxShape.circle,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SurveyScreen()),
+                  );
+                },
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFE8F5F2),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Image.asset('assets/logo_plant.png', scale: 0.7),
                     ),
-                    child: Image.asset('assets/logo_plant.png', scale: 0.7),
-                  ),
-                  SizedBox(width: 7),
-                  Text(
-                    'Personalisasi',
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                    SizedBox(width: 7),
+                    Text(
+                      'Personalisasi',
+                      style: GoogleFonts.plusJakartaSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  Icon(Icons.arrow_forward_sharp,)
-                ],
+                    Spacer(),
+                    Icon(Icons.arrow_forward_sharp),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 16),
@@ -127,11 +139,11 @@ class ProfilePage extends StatelessWidget {
                     style: GoogleFonts.plusJakartaSans(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFFC4343)
+                      color: Color(0xFFFC4343),
                     ),
                   ),
                   Spacer(),
-                  Icon(Icons.arrow_forward_sharp, color: Color(0xFFFC4343),)
+                  Icon(Icons.arrow_forward_sharp, color: Color(0xFFFC4343)),
                 ],
               ),
             ),
