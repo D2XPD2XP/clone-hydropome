@@ -1,5 +1,6 @@
+import 'package:clone_hydropome/screens/main_screen.dart';
 import 'package:flutter/material.dart';
-import 'regist.dart'; // Pastikan file register.dart ada
+import 'regist.dart'; 
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -29,15 +30,12 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.center,
                 child: Text(
                   '9:41',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // Welcome text
               const Text(
                 'Selamat Datang Kembali HydropoMate🌿🍃!',
@@ -47,9 +45,9 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.black,
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // Email field
               const Text(
                 'Email',
@@ -79,9 +77,9 @@ class _LoginPageState extends State<LoginPage> {
                   keyboardType: TextInputType.emailAddress,
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Password field
               const Text(
                 'Password',
@@ -124,9 +122,9 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: !_isPasswordVisible,
                 ),
               ),
-              
+
               const SizedBox(height: 30),
-              
+
               // Login button
               SizedBox(
                 width: double.infinity,
@@ -136,7 +134,9 @@ class _LoginPageState extends State<LoginPage> {
                     _login();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF093731), // Warna hijau sesuai onboarding
+                    backgroundColor: const Color(
+                      0xFF093731,
+                    ), // Warna hijau sesuai onboarding
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
@@ -145,16 +145,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: const Text(
                     'Masuk',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Register link
               Center(
                 child: GestureDetector(
@@ -194,29 +191,26 @@ class _LoginPageState extends State<LoginPage> {
   void _login() {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
-    
+
     // Validasi input
     if (email.isEmpty || password.isEmpty) {
       _showSnackBar('Harap isi email dan password');
       return;
     }
-    
+
     // Handle login logic here
     print('Login attempt with email: $email');
-    
+
     // Contoh: Pindah ke home screen setelah login berhasil
-    // Navigator.pushReplacement(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => HomeScreen()),
-    // );
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => MainScreen()),
+    );
   }
 
   void _showSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.red,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Colors.red),
     );
   }
 

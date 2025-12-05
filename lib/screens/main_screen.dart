@@ -1,3 +1,4 @@
+import 'package:clone_hydropome/screens/homepage.dart';
 import 'package:clone_hydropome/screens/list_tanaman_page.dart';
 import 'package:clone_hydropome/screens/profile_page.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   List<Widget> screenOptions = <Widget>[
-    Scaffold(backgroundColor: Colors.white),
+    Homepage(),
     ListTanamanPage(),
     Scaffold(backgroundColor: Colors.white),
     ProfilePage(),

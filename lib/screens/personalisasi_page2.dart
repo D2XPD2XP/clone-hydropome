@@ -1,18 +1,19 @@
-import 'package:clone_hydropome/screens/personalisasi_page2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:clone_hydropome/widgets/carr_optionSurvey.dart';
 import 'package:clone_hydropome/widgets/custom_button.dart';
 import 'package:clone_hydropome/widgets/top_clipper.dart';
+import 'package:clone_hydropome/screens/personalisai_page3.dart';
+import 'package:clone_hydropome/widgets/card_checkboxSurvey.dart';
 
-class SurveyScreen extends StatefulWidget {
-  const SurveyScreen({Key? key}) : super(key: key);
+class SurveyScreenTwo extends StatefulWidget {
+  const SurveyScreenTwo({Key? key}) : super(key: key);
 
   @override
-  State<SurveyScreen> createState() => _SurveyScreenState();
+  State<SurveyScreenTwo> createState() => _SurveyScreenTwoState();
 }
 
-class _SurveyScreenState extends State<SurveyScreen> {
+class _SurveyScreenTwoState extends State<SurveyScreenTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +46,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
                     Row(
                       children: [
                         Text(
-                          '1/3',
+                          '2/3',
                           style: GoogleFonts.plusJakartaSans(
                             fontSize: 12,
 
@@ -76,20 +77,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 32),
-              Container(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                child: Text(
-                  'Yuk halo Biar HydropoMe Tahu Kebutuhanmu 💚',
-                  style: GoogleFonts.plusJakartaSans(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 48),
+              SizedBox(height: 60),
 
               Stack(
                 clipBehavior: Clip.none,
@@ -99,7 +87,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
                     child: Container(
                       width: double.infinity,
 
-                      height: 800,
+                      height: 1100,
                       color: Colors.white,
                     ),
                   ),
@@ -108,35 +96,44 @@ class _SurveyScreenState extends State<SurveyScreen> {
                     offset: const Offset(0, -35),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 20, right: 24),
+                      padding: EdgeInsets.only(
+                        left: 20,
+                        right: 24,
+
+                        bottom: MediaQuery.of(context).padding.bottom + 20,
+                      ),
 
                       child: Column(
                         children: [
-                          SurveyCard(
+                          CheckboxSurveyCard(
                             iconPath: 'assets/logo_plant.png',
                             question:
-                                'Apakah kamu pernah mencoba menanam hidroponik sebelumnya?',
+                                'Jenis tanaman apa saja yang ingin kamu tanam?',
                             options: [
-                              'Belum pernah',
-                              'Pernah, tapi masih pemula',
-                              'Sudah cukup berpengalaman',
+                              "Sayuran daun (misalnya selada, bayam)",
+                              "Buah (misalnya tomat, stroberi)",
+                              "Tanaman herbal",
+                              "Belum tahu / ingin rekomendasi",
                             ],
                           ),
-
                           const SizedBox(height: 20),
-
                           SurveyCard(
                             iconPath: 'assets/logo_plant.png',
                             question:
-                                'Apa tujuan utama kamu menggunakan aplikasi HydropoMe?',
+                                'Berapa  waktu yang bisa diluangkan per hari untuk merawat tanaman?',
+                            options: ['<10 menit', '10–30 menit', '>30 menit'],
+                          ),
+                          const SizedBox(height: 20),
+                          SurveyCard(
+                            iconPath: 'assets/logo_plant.png',
+                            question:
+                                'Di mana kamu akan menanam tanaman hidroponik?',
                             options: [
-                              'Belajar hidroponik dari awal',
-                              'Merawat tanaman hidroponik yang sudah ada',
-                              'Membeli peralatan dan perlengkapan hidroponik',
-                              'Menjual hasil panen',
+                              'Dalam ruangan',
+                              'Luar ruangan',
+                              'Balkon atas teras',
                             ],
                           ),
-
                           const SizedBox(height: 48),
                         ],
                       ),
@@ -163,7 +160,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
           onTap: (context) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SurveyScreenTwo()),
+              MaterialPageRoute(builder: (context) => SurveyScreenThree()),
             );
           },
         ),

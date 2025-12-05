@@ -11,13 +11,9 @@ import 'package:google_fonts/google_fonts.dart';
 class PantauTask extends StatelessWidget {
   const PantauTask({super.key});
 
- void showCustomDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (ctx) => CustomDialog(),
-  );
-}
-
+  void showCustomDialog(BuildContext context) {
+    showDialog(context: context, builder: (ctx) => CustomDialog());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,12 +136,16 @@ class PantauTask extends StatelessWidget {
               child: Column(
                 children: [
                   CardTask(),
-                  SizedBox(height: 28,),
+                  SizedBox(height: 28),
                   CardMarketplace(),
-                  SizedBox(height: 38,),
-                  CustomButton(isPrimary: false, text: 'Lihat Panduan',),
-                  SizedBox(height: 12,),
-                  CustomButton(isPrimary: true, text: 'Hari ke-1 Selesai', onTap: showCustomDialog,)
+                  SizedBox(height: 38),
+                  CustomButton(isPrimary: false, text: 'Lihat Panduan'),
+                  SizedBox(height: 12),
+                  CustomButton(
+                    isPrimary: true,
+                    text: 'Hari ke-1 Selesai',
+                    onTap: showCustomDialog,
+                  ),
                 ],
               ),
             ),
