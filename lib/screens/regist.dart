@@ -315,7 +315,7 @@ class _RegisterPageState extends State<RegisterPage> {
       SnackBar(content: Text(message), backgroundColor: Colors.red),
     );
   }
-
+//finishing 
   @override
   void dispose() {
     _namaController.dispose();
