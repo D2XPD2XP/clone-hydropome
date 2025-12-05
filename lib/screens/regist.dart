@@ -12,8 +12,9 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _namaController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
-  
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+
   bool _isPasswordVisible = false;
   bool _isConfirmPasswordVisible = false;
 
@@ -33,15 +34,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 alignment: Alignment.center,
                 child: Text(
                   '9:41',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // Header text
               const Text(
                 'Daftar Akun dan Mulai\nBertani Hidroponik🌿!',
@@ -52,10 +50,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 1.3,
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
-              // Nama Lengkap field
+
+              // Nama Lengkap
               const Text(
                 'Nama Lengkap',
                 style: TextStyle(
@@ -83,9 +81,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Email field
               const Text(
                 'Email',
@@ -115,9 +113,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   keyboardType: TextInputType.emailAddress,
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Buat Password field
               const Text(
                 'Buat Password',
@@ -160,9 +158,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: !_isPasswordVisible,
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Konfirmasi Password field
               const Text(
                 'Konfirmasi Password',
@@ -197,7 +195,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       onPressed: () {
                         setState(() {
-                          _isConfirmPasswordVisible = !_isConfirmPasswordVisible;
+                          _isConfirmPasswordVisible =
+                              !_isConfirmPasswordVisible;
                         });
                       },
                     ),
@@ -205,9 +204,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: !_isConfirmPasswordVisible,
                 ),
               ),
-              
+
               const SizedBox(height: 30),
-              
+
               // Register button
               SizedBox(
                 width: double.infinity,
@@ -225,32 +224,28 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   child: const Text(
                     'Daftar Akun',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Login link
               Center(
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const LoginPage()),
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
                     );
                   },
                   child: RichText(
                     text: TextSpan(
                       text: 'Sudah memiliki akun? ',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 14,
-                      ),
+                      style: TextStyle(color: Colors.grey[600], fontSize: 14),
                       children: const [
                         TextSpan(
                           text: 'Masuk',
@@ -264,7 +259,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
             ],
           ),
@@ -278,36 +273,36 @@ class _RegisterPageState extends State<RegisterPage> {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
     final confirmPassword = _confirmPasswordController.text.trim();
-    
+
     // Validasi input
     if (nama.isEmpty) {
       _showSnackBar('Harap isi nama lengkap');
       return;
     }
-    
+
     if (email.isEmpty) {
       _showSnackBar('Harap isi email');
       return;
     }
-    
+
     if (password.isEmpty) {
       _showSnackBar('Harap buat password');
       return;
     }
-    
+
     if (confirmPassword.isEmpty) {
       _showSnackBar('Harap konfirmasi password');
       return;
     }
-    
+
     if (password != confirmPassword) {
       _showSnackBar('Password dan konfirmasi password tidak sama');
       return;
     }
-    
+
     // Handle register logic here
     print('Register attempt with: $nama, $email');
-    
+
     // Contoh: Pindah ke home screen setelah register berhasil
     // Navigator.pushReplacement(
     //   context,
@@ -317,10 +312,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   void _showSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.red,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Colors.red),
     );
   }
 
